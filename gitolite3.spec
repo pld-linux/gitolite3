@@ -4,13 +4,13 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Software for hosting git repositories
 Summary(pl.UTF-8):	Narzędzie do hostowania repozytoriów git
-Name:		gitolite
-Version:	2.3.1
-Release:	2
+Name:		gitolite3
+Version:	3.5.2
+Release:	0.1
 License:	GPL v2
 Group:		Development/Tools
-Source0:	http://github.com/sitaramc/gitolite/tarball/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	096e80901404832445040aef7d733550
+Source0:	http://github.com/sitaramc/gitolite/tarball/v%{version}/gitolite-%{version}.tar.gz
+# Source0-md5:	fe962443eab63cb7e4735c021950d895
 Patch0:		%{name}-mkdir.patch
 Patch1:		%{name}-env.patch
 Patch2:		%{name}-BIG_INFO_CAP.patch
