@@ -11,13 +11,6 @@ License:	GPL v2
 Group:		Development/Tools
 Source0:	http://github.com/sitaramc/gitolite/tarball/v%{version}/gitolite-%{version}.tar.gz
 # Source0-md5:	fe962443eab63cb7e4735c021950d895
-Patch0:		%{name}-mkdir.patch
-Patch1:		%{name}-env.patch
-Patch2:		%{name}-BIG_INFO_CAP.patch
-Patch3:		%{name}-broken_links.patch
-Patch4:		%{name}-gl_setup.patch
-Patch5:		%{name}-wildcard_repos.patch
-Patch6:	        %{name}-timezone.patch
 URL:		http://github.com/sitaramc/gitolite
 BuildRequires:	perl-Text-Markdown
 BuildRequires:	rpm-perlprov
@@ -90,14 +83,6 @@ Dokumentacja do Gitolite.
 %setup -qc
 mv sitaramc-gitolite-*/* .
 %{__rm} -r sitaramc-gitolite-*
-
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
 
 %{__rm} src/gl-system-install
 
