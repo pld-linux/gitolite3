@@ -1,12 +1,9 @@
-# TODO:
-# - how is it expected to cooperate with git-daemon?
-# - add dedicated system user
 %include	/usr/lib/rpm/macros.perl
 Summary:	Software for hosting git repositories
 Summary(pl.UTF-8):	Narzędzie do hostowania repozytoriów git
 Name:		gitolite3
 Version:	3.5.2
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://github.com/sitaramc/gitolite/tarball/v%{version}/gitolite-%{version}.tar.gz
