@@ -3,7 +3,7 @@ Summary:	Software for hosting git repositories
 Summary(pl.UTF-8):	Narzędzie do hostowania repozytoriów git
 Name:		gitolite3
 Version:	3.5.3.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://github.com/sitaramc/gitolite/tarball/v%{version}/gitolite-%{version}.tar.gz
@@ -52,6 +52,14 @@ oprogramowania poza samym gitem i Perlem.
 Gitolite 3.x to kod Gitolite napisany od nowa, dokumentacja online
 wyjaśnia proces aktualizacji.
 
+%package contrib
+Summary:	Contributed scripts for Gitolite
+Group:		Networking
+Requires:	%{name} = %{version}-%{release}
+
+%description contrib
+Contributed scripts for Gitolite.
+
 %prep
 %setup -qc
 mv sitaramc-gitolite-*/* .
@@ -66,8 +74,7 @@ echo "v%{version}" > src/VERSION # add '-pld' suffix or something if patched
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{perl_vendorlib}}
-
-install check-g2-compat convert-gitosis-conf $RPM_BUILD_ROOT%{_bindir}
+install -p check-g2-compat convert-gitosis-conf $RPM_BUILD_ROOT%{_bindir}
 
 cp -a src $RPM_BUILD_ROOT%{_datadir}/gitolite
 mv $RPM_BUILD_ROOT%{_datadir}/gitolite/lib/* $RPM_BUILD_ROOT%{perl_vendorlib}
@@ -75,6 +82,8 @@ rmdir $RPM_BUILD_ROOT%{_datadir}/gitolite/lib
 
 ln -sf %{_datadir}/gitolite/gitolite $RPM_BUILD_ROOT%{_bindir}
 ln -sf %{_datadir}/gitolite/gitolite-shell $RPM_BUILD_ROOT%{_bindir}
+
+cp -a contrib $RPM_BUILD_ROOT%{_datadir}/gitolite
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -106,3 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/gitolite/triggers/post-compile
 %attr(755,root,root) %{_datadir}/gitolite/triggers/post-compile/*
 %{perl_vendorlib}/Gitolite
+
+%files contrib
+%defattr(644,root,root,755)
+%{_datadir}/gitolite/contrib
