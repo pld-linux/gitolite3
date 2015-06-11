@@ -2,12 +2,12 @@
 Summary:	Software for hosting git repositories
 Summary(pl.UTF-8):	Narzędzie do hostowania repozytoriów git
 Name:		gitolite3
-Version:	3.5.3.1
-Release:	3
+Version:	3.6.3
+Release:	1
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://github.com/sitaramc/gitolite/tarball/v%{version}/gitolite-%{version}.tar.gz
-# Source0-md5:	fcb76649837241369353a52d4156023a
+# Source0-md5:	49fedfe34205f0cba1c4c5297883e177
 Source1:	gitolite.pl
 Patch0:		%{name}-README.patch
 URL:		http://github.com/sitaramc/gitolite
@@ -92,30 +92,39 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG CONTRIBUTING README.txt
+%doc CHANGELOG CONTRIBUTING README.markdown
 %attr(755,root,root) %{_bindir}/gitolite
 %attr(755,root,root) %{_bindir}/gitolite-shell
 %attr(755,root,root) %{_bindir}/check-g2-compat
 %attr(755,root,root) %{_bindir}/convert-gitosis-conf
+
 %dir %{_datadir}/gitolite
+%{_datadir}/gitolite/gitolite.pl
+
 %attr(755,root,root) %{_datadir}/gitolite/gitolite
 %attr(755,root,root) %{_datadir}/gitolite/gitolite-shell
 %{_datadir}/gitolite/VERSION
+
 %dir %{_datadir}/gitolite/VREF
 %attr(755,root,root) %{_datadir}/gitolite/VREF/*
+
 %dir %{_datadir}/gitolite/commands
 %attr(755,root,root) %{_datadir}/gitolite/commands/*
+
 %dir %{_datadir}/gitolite/syntactic-sugar
 %{_datadir}/gitolite/syntactic-sugar/*
+
 %dir %{_datadir}/gitolite/triggers
+%dir %{_datadir}/gitolite/triggers/post-compile
 %attr(755,root,root) %{_datadir}/gitolite/triggers/bg
 %attr(755,root,root) %{_datadir}/gitolite/triggers/partial-copy
 %attr(755,root,root) %{_datadir}/gitolite/triggers/renice
 %attr(755,root,root) %{_datadir}/gitolite/triggers/repo-specific-hooks
 %attr(755,root,root) %{_datadir}/gitolite/triggers/set-default-roles
 %attr(755,root,root) %{_datadir}/gitolite/triggers/upstream
-%dir %{_datadir}/gitolite/triggers/post-compile
+%attr(755,root,root) %{_datadir}/gitolite/triggers/expand-deny-messages
 %attr(755,root,root) %{_datadir}/gitolite/triggers/post-compile/*
+
 %{perl_vendorlib}/Gitolite
 
 %files contrib

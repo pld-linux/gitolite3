@@ -1,23 +1,18 @@
-diff -dur gitolite3-3.5.2.orig/README.txt gitolite3-3.5.2/README.txt
---- gitolite3-3.5.2.orig/README.txt	2013-07-10 08:17:36.000000000 +0200
-+++ gitolite3-3.5.2/README.txt	2013-09-12 10:04:36.000000000 +0200
-@@ -71,18 +71,10 @@
-       * make sure your ssh public key from your workstation is available at
-         $HOME/YourName.pub
+--- gitolite3-3.6.3/README.markdown~	2015-04-26 12:38:49.000000000 +0300
++++ gitolite3-3.6.3/README.markdown	2015-06-12 00:28:16.925575874 +0300
+@@ -63,13 +63,8 @@
+ *   make sure your ssh public key from your workstation has been copied as
+     $HOME/YourName.pub
  
--      * run the following commands:
-+      * run the following command:
- 
--            git clone git://github.com/sitaramc/gitolite
--            mkdir -p $HOME/bin
--            gitolite/install -to $HOME/bin
-             gitolite setup -pk YourName.pub
- 
--        If the last command doesn't run perhaps 'bin' in not in your 'PATH'.
--        You can either add it, or just run:
+-Next, install gitolite by running these commands:
 -
--            $HOME/bin/gitolite setup -pk YourName.pub
+-    git clone git://github.com/sitaramc/gitolite
+-    mkdir -p $HOME/bin
+-    gitolite/install -to $HOME/bin
 -
+-Finally, setup gitolite with yourself as the administrator:
++Next, install gitolite by running this command,
++setup gitolite with yourself as the administrator:
  
- ADDING USERS AND REPOS
- ----------------------
+     gitolite setup -pk YourName.pub
+ 
