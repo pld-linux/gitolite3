@@ -1,0 +1,11 @@
+--- ./src/lib/Gitolite/Rc.pm~	2016-02-20 14:48:57.000000000 +0200
++++ ./src/lib/Gitolite/Rc.pm	2016-03-07 11:17:00.434408955 +0200
+@@ -47,7 +47,7 @@
+ 
+ #<<<
+ $REMOTE_COMMAND_PATT  =                qr(^[-0-9a-zA-Z._\@/+ :,\%=]*$);
+-$REF_OR_FILENAME_PATT =     qr(^[0-9a-zA-Z][-0-9a-zA-Z._\@/+ :,]*$);
++$REF_OR_FILENAME_PATT =     qr(^[0-9a-zA-Z][-0-9a-zA-Z._\@/+ :,=]*$);
+ $REPONAME_PATT        =  qr(^\@?[0-9a-zA-Z][-0-9a-zA-Z._\@/+]*$);
+ $REPOPATT_PATT        = qr(^\@?[[0-9a-zA-Z][-0-9a-zA-Z._\@/+\\^$|()[\]*?{},]*$);
+ $USERNAME_PATT        =  qr(^\@?[0-9a-zA-Z][-0-9a-zA-Z._\@+]*$);
