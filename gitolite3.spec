@@ -2,12 +2,12 @@
 Summary:	Software for hosting git repositories
 Summary(pl.UTF-8):	Narzędzie do hostowania repozytoriów git
 Name:		gitolite3
-Version:	3.6.5
-Release:	2
+Version:	3.6.6
+Release:	1
 License:	GPL v2
 Group:		Development/Tools
 Source0:	https://github.com/sitaramc/gitolite/tarball/v%{version}/gitolite-%{version}.tar.gz
-# Source0-md5:	62d15150914084a37e6fcab6fdf63d34
+# Source0-md5:	8ab8ea560528e8c8e4e4582f63d49efa
 Source1:	gitolite.pl
 Patch0:		%{name}-README.patch
 Patch1:		REF_OR_FILENAME_PATT.patch
