@@ -17,9 +17,14 @@ BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
 Requires:	git-core >= 1.6.6
 Requires:	openssh-server >= 5.0
+Suggests:	perl-Redis
 Conflicts:	gitolite
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# Optional Redis cache support
+# http://gitolite.com/gitolite/cache.html
+%define	_noautoreq_perl	Redis
 
 %description
 Gitolite allows a server to host many git repositories and provide
